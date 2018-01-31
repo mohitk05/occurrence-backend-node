@@ -5,6 +5,7 @@ var o = require('./occurrence_module');
 
 app.listen(process.env.PORT || 3001, '0.0.0.0', () => {
   request(url, function(err, response, body){
+    if(err) throw err;
     global_occ = {};
     global_occ = o.occurrence(body);
   })
