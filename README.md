@@ -12,4 +12,7 @@ Entry point for the app is server.js. This module initialises the express app an
 
 The routes handle the requests. The occurrence data fetching url is localhost:xxxx/find?num=3. Here 'num' is the request query item given by the frontend. This url runs the'myFunction' of 'myController'.
 
+When a request hits the server ending in '/find', myFunction is run, which accesses the global object named 'global_occ' which is an array of arrays having pairs or word and occurrence frequency. It slices the array accoring to the requested number and sends the response. In case the requested number is larger than length of global\_occ then consider the number as the length of global\_occ i.e. return all the words.
+
+All the core calculation is done in occurrence_module. It uses a Map object to calculate occurrence frequency and converts them into an array of arrays, finally sorting it according to the frequency. This is returned to the calling step.
 
