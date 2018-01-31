@@ -9,7 +9,7 @@ var app = express();
 var index = require('./routes/index');
 
 if (process.env.NODE_ENV === 'production') {
-  app.use('/front', express.static('./frontend/build'));
+  app.use('/static', express.static('./frontend/build'));
 }
 //Middleware
 app.use(function (req, res, next) {
