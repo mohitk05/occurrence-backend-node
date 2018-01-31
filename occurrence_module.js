@@ -6,7 +6,6 @@ exports.occurrence = function(body){
   var new_string = body.replace(omit_regex, ' ');
   var split_regex = /\.\s|[\s]+|[\n]+/;
   var array = new_string.split(split_regex);
-  console.log(array);
   var occ = new Map();
   var keys = [], values = [];
   for(var i = 0; i< array.length; i++){

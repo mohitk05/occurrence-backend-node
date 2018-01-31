@@ -8,6 +8,9 @@ var app = express();
 //Routes import
 var index = require('./routes/index');
 
+if (process.env.NODE_ENV === 'production') {
+  app.use('/front', express.static('./frontend/build'));
+}
 //Middleware
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
