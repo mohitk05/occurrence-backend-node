@@ -1,7 +1,8 @@
 exports.occurrence = function(body){
-  //omit_regex can be defined to selectively get website/email names 
+  //omit_regex can be defined to selectively get website/email names
   //  as a whole string or cut them into domain name and .com
-  var omit_regex = /[^-'\w\.//@:]/g;
+  var omit_regex = /[^-'\w]/g;
+  //optional: omit_regex = /[^-'\w\.//@:]/g;
   var new_string = body.replace(omit_regex, ' ');
   var split_regex = /\.\s|[\s]+|[\n]+/;
   var array = new_string.split(split_regex);
